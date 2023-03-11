@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CreationalPattern;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::controller(CreationalPattern::class)->group(function () 
+{
+    
+    Route::get('singleton', 'singleton');
+    Route::get('factory', 'factory');
+
+});
+
+Route::prefix(['structural'], function()
+{
+
+
+
+});
+
+Route::prefix(['behavioral'], function()
+{
+
+
+
 });
