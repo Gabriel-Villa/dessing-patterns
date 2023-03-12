@@ -20,6 +20,7 @@ Route::controller(CreationalPattern::class)->group(function ()
     Route::get('singleton', 'singleton');
     Route::get('factory', 'factory');
     Route::get('abstractFactory', 'abstractFactory');
+    Route::get('prototype', 'prototype');
 });
 
 Route::prefix(['structural'], function()

@@ -31,6 +31,10 @@ class CreationalPattern extends Controller
         $restaurant->createDessert("My Dessert", 12)->getResumeDessert();
     }
 
-   
+    public function prototype(PrototypeSon $prototypeSon)
+    {
+        $son = clone $prototypeSon;
+        $son->getPrototypeMessage();
+    }
 
 }
