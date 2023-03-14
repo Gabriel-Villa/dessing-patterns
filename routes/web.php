@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CreationalPattern;
+use App\Http\Controllers\StructuralPattern;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,11 +25,9 @@ Route::controller(CreationalPattern::class)->group(function ()
     Route::get('builder', 'builder');
 });
 
-Route::prefix(['structural'], function()
+Route::controller(StructuralPattern::class)->group(function () 
 {
-
-
-
+    Route::get('adapter', 'adapter');
 });
 
 Route::prefix(['behavioral'], function()
