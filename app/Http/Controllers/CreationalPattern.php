@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Access\PrototypeSon;
 use App\Access\Singleton;
+use App\Access\SmartPhoneAppleBuilder;
+use App\Access\SmartPhoneBuilder;
+use App\Access\SmartPhoneHuaveiBuilder;
 use App\Factory\PayMethodFactory;
 
 use App\Factory\Restaurant_1_Factory;
@@ -37,7 +40,15 @@ class CreationalPattern extends Controller
         $copy = clone $prototypeSon;
 
         dd($copy);
+    }
 
+    public function builder(SmartPhoneBuilder $director)
+    {
+        $smartPhoneApple = $director->make(new SmartPhoneAppleBuilder());
+
+        $smartPhoneHuavei = $director->make(new SmartPhoneHuaveiBuilder());
+        
+        dd($smartPhoneApple, $smartPhoneHuavei);
     }
 
 }

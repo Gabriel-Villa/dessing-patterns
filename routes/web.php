@@ -21,6 +21,7 @@ Route::controller(CreationalPattern::class)->group(function ()
     Route::get('factory', 'factory');
     Route::get('abstractFactory', 'abstractFactory');
     Route::get('prototype', 'prototype');
+    Route::get('builder', 'builder');
 });
 
 Route::prefix(['structural'], function()
