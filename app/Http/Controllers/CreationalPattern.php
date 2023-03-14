@@ -10,7 +10,6 @@ use App\Factory\Restaurant_1_Factory;
 use App\Factory\Restaurant_2_Factory;
 use App\Factory\Restaurant_3_Factory;
 
-use Illuminate\Http\Request;
 
 class CreationalPattern extends Controller
 {
@@ -33,8 +32,12 @@ class CreationalPattern extends Controller
 
     public function prototype(PrototypeSon $prototypeSon)
     {
-        $son = clone $prototypeSon;
-        $son->getPrototypeMessage();
+        $prototypeSon->color = 'red';
+
+        $copy = clone $prototypeSon;
+
+        dd($copy);
+
     }
 
 }

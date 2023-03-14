@@ -23,7 +23,7 @@ class Singleton
 
     public function fly()
     {
-        dd("Flyyyyyyyyyyyyyyyy")
+        dd("Flyyyyyyyyyyyyyyyy");
     }
 
 }
