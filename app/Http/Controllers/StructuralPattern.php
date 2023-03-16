@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Access\Cap;
+use App\Access\Clothe;
 use App\Access\CompatiblePcService;
+use App\Access\Pants;
+use App\Access\Sandals;
 use App\Access\XmlElement;
 use App\Adapters\JsonAdapter;
 use App\Adapters\XmlAdapter;
@@ -29,6 +33,18 @@ class StructuralPattern extends Controller
         $resXml = $service->isBuildeable(new XmlAdapter($this->xml)); 
 
         dd($resJson, $resXml);
+
+    }
+
+    public function decorator()
+    {
+
+        $clote = new Clothe();
+        $clote = new Cap($clote);
+        $clote = new Pants($clote);
+        $clote = new Sandals($clote);
+
+        dd("Clothes selected: {$clote->getName()}, Total price: {$clote->getPrice()}");
 
     }
 

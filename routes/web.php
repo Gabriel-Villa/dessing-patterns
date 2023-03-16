@@ -27,6 +27,8 @@ Route::controller(CreationalPattern::class)->group(function ()
 
 Route::controller(StructuralPattern::class)->group(function () 
 {
+    Route::get('decorator', 'decorator');
+
     Route::get('facade', 'facade');
 });
 
