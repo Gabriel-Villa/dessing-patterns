@@ -27,7 +27,7 @@ Route::controller(CreationalPattern::class)->group(function ()
 
 Route::controller(StructuralPattern::class)->group(function () 
 {
-    Route::get('adapter', 'adapter');
+    Route::get('facade', 'facade');
 });
 
 Route::prefix(['behavioral'], function()
