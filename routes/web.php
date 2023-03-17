@@ -36,5 +36,5 @@ Route::controller(StructuralPattern::class)->group(function ()
 Route::controller(BehavioralPattern::class)->group(function () 
 {
     Route::get('strategy', 'strategy');
-
+    Route::get('memento', 'memento');
 });
