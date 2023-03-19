@@ -11,11 +11,11 @@ class PayMethodFactory
     public static function getPaymentMethodInstance($method)
     {
 
-        if($method == 'paypal'){
-            return new PaypalPayMethod();
-        }else if($method == 'creditCard'){
-            return new CreditCardPayMethod();
-        }
+        return match(true)
+        {
+            $method == 'paypal' => new PaypalPayMethod(),
+            $method == 'creditcard' => new CreditCardPayMethod
+        };
 
     }
 
