@@ -39,5 +39,5 @@ Route::controller(BehavioralPattern::class)->group(function ()
     Route::get('strategy', 'strategy');
     Route::get('memento', 'memento');
     Route::get('observer', 'observer');
-    
+    Route::get('state', 'state');
 });
