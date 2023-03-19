@@ -31,4 +31,9 @@ class SmartPhoneAppleBuilder implements ISmartPhoneBuilder
         return $this;
     }
 
+    public function getResult()
+    {
+        return $this->smartPhone;
+    }
+
 }

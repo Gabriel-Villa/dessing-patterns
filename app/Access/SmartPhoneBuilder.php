@@ -11,7 +11,7 @@ class SmartPhoneBuilder
 
     public function make(ISmartPhoneBuilder $builder)
     {
-        return $builder->design()->mounting();
+        return $builder->design()->mounting()->getResult();
 
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Access\Carro;
 use App\Access\PrototypeSon;
 use App\Access\Singleton;
 use App\Access\SmartPhoneAppleBuilder;
@@ -48,7 +49,12 @@ class CreationalPattern extends Controller
 
         $smartPhoneHuavei = $director->make(new SmartPhoneHuaveiBuilder());
         
-        dd($smartPhoneApple, $smartPhoneHuavei);
+        $carro = (new Carro())
+            ->setQty(1)
+            ->setColor("Black");
+
+        dd($smartPhoneApple, $smartPhoneHuavei, $carro);
+
     }
 
 }
