@@ -31,10 +31,13 @@ Route::controller(StructuralPattern::class)->group(function ()
     Route::get('adapter', 'adapter');
     Route::get('decorator', 'decorator');
     Route::get('facade', 'facade');
+    Route::get('bridge', 'bridge');
 });
 
 Route::controller(BehavioralPattern::class)->group(function () 
 {
     Route::get('strategy', 'strategy');
     Route::get('memento', 'memento');
+    Route::get('observer', 'observer');
+    
 });

@@ -10,6 +10,8 @@ use App\Access\Sandals;
 use App\Access\XmlElement;
 use App\Adapters\JsonAdapter;
 use App\Adapters\XmlAdapter;
+use App\Access\DeveloperStorage;
+use App\Access\FilesViewer;
 use App\Facade\Hello;
 use Illuminate\Http\Request;
 
@@ -51,6 +53,14 @@ class StructuralPattern extends Controller
     public function facade()
     {
         Hello::test();
+    }
+
+    public function bridge()
+    {
+      
+        $files = new FilesViewer(new DeveloperStorage());
+        $files->getAllFilesFromStorage();
+
     }
 
 }
