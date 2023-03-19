@@ -2,16 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Access\AwsS3Storage;
+use App\Access\AzureBlobStorage;
 use App\Access\Cap;
 use App\Access\Clothe;
 use App\Access\CompatiblePcService;
+use App\Access\Developer;
+use App\Access\GoogleCloudStorage;
+use App\Access\Management;
 use App\Access\Pants;
 use App\Access\Sandals;
 use App\Access\XmlElement;
 use App\Adapters\JsonAdapter;
 use App\Adapters\XmlAdapter;
-use App\Access\DeveloperStorage;
-use App\Access\FilesViewer;
 use App\Facade\Hello;
 use Illuminate\Http\Request;
 
@@ -58,8 +61,15 @@ class StructuralPattern extends Controller
     public function bridge()
     {
       
-        $files = new FilesViewer(new DeveloperStorage());
-        $files->getAllFilesFromStorage();
+        $developer = new Developer();
+        $management = new Management();
+
+        $aws = new AwsS3Storage();
+        $googleCloud = new GoogleCloudStorage();
+        $azure = new AzureBlobStorage();
+
+        $developer->setStorage($googleCloud);
+        $developer->downloadFiles();
 
     }
 
