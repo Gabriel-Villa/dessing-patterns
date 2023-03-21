@@ -12,6 +12,9 @@ use App\Access\GoogleCloudStorage;
 use App\Access\Management;
 use App\Access\Pants;
 use App\Access\Sandals;
+use App\Access\SendEmailDecorator;
+use App\Access\SendSmsDecorator;
+use App\Access\SlackNotification;
 use App\Access\XmlElement;
 use App\Adapters\JsonAdapter;
 use App\Adapters\XmlAdapter;
@@ -44,12 +47,12 @@ class StructuralPattern extends Controller
     public function decorator()
     {
 
-        $clote = new Clothe();
-        $clote = new Cap($clote);
-        $clote = new Pants($clote);
-        $clote = new Sandals($clote);
+        $notification = new SlackNotification();
 
-        dd("Clothes selected: {$clote->getName()}, Total price: {$clote->getPrice()}");
+        $email = new SendEmailDecorator($notification); 
+        $sms = new SendSmsDecorator($email);
+
+        $sms->operation();
 
     }
 
