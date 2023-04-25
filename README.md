@@ -1,3 +1,8 @@
+# IMAGE HOME PAGE
+![Dessing Patterns](public/images/home-page.jpeg "home-page")
+
+
+# STEPS
 1. Clone repo:
 ```
 git clone git@github.com:Gabriel-Villa/dessing-patterns.git
