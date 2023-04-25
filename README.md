@@ -1,23 +1,40 @@
 1. Clone repo:
+```
+git clone git@github.com:Gabriel-Villa/dessing-patterns.git
+```
 
-2. Change directory && install dependencies composer.json
-cd dessing-patterns &&
+2. Change directory
+```
+cd dessing-patterns
+```
+3. Install dependencies composer.json
+
+```
 docker run --rm \
     -u "$(id -u):$(id -g)" \
     -v "$(pwd):/var/www/html" \
     -w /var/www/html \
     laravelsail/php82-composer:latest \
     composer install --ignore-platform-reqs
+```
 
-3. Create .env
+4. Create .env
+```
 cp .env.example .env  
+```
 
-4. Start sail
-sail up
+5. Start sail
+```
+sail up -d
+```
 
-5. Generate key
+6. Generate key
+```
 sail php artisan key:generate
+```
 
-6. Install dependencies package.json && run
+7. Install dependencies package.json && run
+```
 sail npm i &&
 sail npm run dev
+```
